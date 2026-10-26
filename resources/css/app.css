@@ -1,0 +1,1093 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: oklch(100% 0 0deg);
+  font-family: "PangramSansNormal", sans-serif;
+  font-size: 1.65vh;
+  font-weight: normal;
+  color: oklch(0% 0 0deg);
+  word-break: break-word;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+br {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: "PangramSansNormal";
+  src: url("../fonts/pangram_sans/normal/variable.woff2") format("woff2"), url("../fonts/pangram_sans/normal/variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "PangramSansCondensed";
+  src: url("../fonts/pangram_sans/condensed/variable.woff2") format("woff2"), url("../fonts/pangram_sans/condensed/variable.ttf") format("truetype");
+}
+.DEV-DISABLE_SELECTION {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.DEV-DISABLE_INTERACTIONS {
+  pointer-events: none;
+}
+
+.DEV-DISABLE_VISIBILITY {
+  display: none;
+}
+
+:root {
+  --wght-thin: 100;
+  --wght-extralight: 148;
+  --wght-light: 228;
+  --wght-regular: 336;
+  --wght-medium: 469;
+  --wght-semibold: 617;
+  --wght-bold: 767;
+  --wght-extrabold: 900;
+  --ital-none: 100;
+  --ital-italic: 900;
+  --ital-reclined: -700;
+}
+
+.TYPO-FONT-PS_NORMAL, .TYPO-M-PRESET-CORE_DEFAULT_ITALIC, .TYPO-M-PRESET-CORE_DEFAULT_BOLD, .TYPO-M-PRESET-CORE_DEFAULT, .TYPO-M-PRESET-CORE_SMALL, .TYPO-D-PRESET-CORE_DEFAULT_ITALIC, .TYPO-D-PRESET-CORE_DEFAULT_BOLD, .TYPO-D-PRESET-CORE_DEFAULT, .TYPO-D-PRESET-CORE_SMALL {
+  font-family: "PangramSansNormal", sans-serif;
+}
+
+.TYPO-FONT-PS_CONDENSED, .TYPO-M-PRESET-CORE_H1, .TYPO-M-PRESET-CORE_H2, .TYPO-M-PRESET-CORE_H3, .TYPO-D-PRESET-CORE_H1, .TYPO-D-PRESET-CORE_H2, .TYPO-D-PRESET-CORE_H3 {
+  font-family: "PangramSansCondensed", sans-serif;
+}
+
+.TYPO-D-SIZES-SMALL, .TYPO-D-PRESET-CORE_SMALL {
+  font-size: 1.485vh;
+}
+
+.TYPO-D-SIZES-DEFAULT, .TYPO-D-PRESET-CORE_DEFAULT_ITALIC, .TYPO-D-PRESET-CORE_DEFAULT_BOLD, .TYPO-D-PRESET-CORE_DEFAULT {
+  font-size: 1.65vh;
+}
+
+.TYPO-D-SIZES-H3, .TYPO-D-PRESET-CORE_H3 {
+  font-size: 3.3vh;
+}
+
+.TYPO-D-SIZES-H2, .TYPO-D-PRESET-CORE_H2 {
+  font-size: 5.28vh;
+}
+
+.TYPO-D-SIZES-H1, .TYPO-D-PRESET-CORE_H1 {
+  font-size: 6.6vh;
+}
+
+.TYPO-M-SIZES-SMALL, .TYPO-M-PRESET-CORE_SMALL {
+  font-size: 3.15dvw;
+}
+
+.TYPO-M-SIZES-DEFAULT, .TYPO-M-PRESET-CORE_DEFAULT_ITALIC, .TYPO-M-PRESET-CORE_DEFAULT_BOLD, .TYPO-M-PRESET-CORE_DEFAULT {
+  font-size: 3.5dvw;
+}
+
+.TYPO-M-SIZES-H3, .TYPO-M-PRESET-CORE_H3 {
+  font-size: 6.65dvw;
+}
+
+.TYPO-M-SIZES-H2, .TYPO-M-PRESET-CORE_H2 {
+  font-size: 7.35dvw;
+}
+
+.TYPO-M-SIZES-H1, .TYPO-M-PRESET-CORE_H1 {
+  font-size: 8.4dvw;
+}
+
+.TYPO-WEIGHT-THIN {
+  --current-wght: var(--wght-thin);
+}
+
+.TYPO-WEIGHT-EXTRALIGHT {
+  --current-wght: var(--wght-extralight);
+}
+
+.TYPO-WEIGHT-LIGHT {
+  --current-wght: var(--wght-light);
+}
+
+.TYPO-WEIGHT-REGULAR {
+  --current-wght: var(--wght-regular);
+}
+
+.TYPO-WEIGHT-MEDIUM, .TYPO-M-PRESET-CORE_DEFAULT_ITALIC, .TYPO-M-PRESET-CORE_DEFAULT, .TYPO-M-PRESET-CORE_SMALL, .TYPO-D-PRESET-CORE_DEFAULT_ITALIC, .TYPO-D-PRESET-CORE_DEFAULT, .TYPO-D-PRESET-CORE_SMALL {
+  --current-wght: var(--wght-medium);
+}
+
+.TYPO-WEIGHT-SEMIBOLD, .TYPO-M-PRESET-CORE_H1, .TYPO-M-PRESET-CORE_H2, .TYPO-M-PRESET-CORE_H3, .TYPO-M-PRESET-CORE_DEFAULT_BOLD, .TYPO-D-PRESET-CORE_H1, .TYPO-D-PRESET-CORE_H2, .TYPO-D-PRESET-CORE_H3, .TYPO-D-PRESET-CORE_DEFAULT_BOLD {
+  --current-wght: var(--wght-semibold);
+}
+
+.TYPO-WEIGHT-BOLD {
+  --current-wght: var(--wght-bold);
+}
+
+.TYPO-WEIGHT-EXTRABOLD {
+  --current-wght: var(--wght-extrabold);
+}
+
+.TYPO-OBLIQUE-NONE {
+  --current-ital: var(--ital-none);
+}
+
+.TYPO-OBLIQUE-ITALIC, .TYPO-M-PRESET-CORE_DEFAULT_ITALIC, .TYPO-D-PRESET-CORE_DEFAULT_ITALIC {
+  --current-ital: var(--ital-italic);
+}
+
+.TYPO-OBLIQUE-RECLINED {
+  --current-ital: var(--ital-reclined);
+}
+
+.TYPO-VARIABLE, .TYPO-M-PRESET-CORE_H1, .TYPO-M-PRESET-CORE_H2, .TYPO-M-PRESET-CORE_H3, .TYPO-M-PRESET-CORE_DEFAULT_ITALIC, .TYPO-M-PRESET-CORE_DEFAULT_BOLD, .TYPO-M-PRESET-CORE_DEFAULT, .TYPO-M-PRESET-CORE_SMALL, .TYPO-D-PRESET-CORE_H1, .TYPO-D-PRESET-CORE_H2, .TYPO-D-PRESET-CORE_H3, .TYPO-D-PRESET-CORE_DEFAULT_ITALIC, .TYPO-D-PRESET-CORE_DEFAULT_BOLD, .TYPO-D-PRESET-CORE_DEFAULT, .TYPO-D-PRESET-CORE_SMALL {
+  font-variation-settings: "wght" var(--current-wght, var(--wght-regular)), "ital" var(--current-ital, var(--ital-none));
+}
+
+.TYPO-DETAILS-SS01 {
+  font-feature-settings: "ss01" 1;
+}
+
+.TYPO-DETAILS-SS02 {
+  font-feature-settings: "ss02" 1;
+}
+
+.TYPO-DETAILS-SS03 {
+  font-feature-settings: "ss03" 1;
+}
+
+.TYPO-DETAILS-CASE {
+  font-feature-settings: "case" 1;
+}
+
+.TYPO-DETAILS-ONUM {
+  font-feature-settings: "onum" 1;
+}
+
+@media screen and (min-aspect-ratio: 1.4492753623) {
+  .S-DESKTOP-wrapper {
+    display: unset;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: none;
+  }
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+  .S-DESKTOP-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation {
+    grid-area: 1/1/2/2;
+    width: 6vh;
+    z-index: 101;
+    overflow-x: clip;
+    transition: width 0.1s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover {
+    width: 30.8vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-icon {
+    opacity: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-content {
+    opacity: 1;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper {
+    height: 100vh;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    padding: 1.35vh 0;
+    box-sizing: border-box;
+    border-right: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 0 2.1vh 2.1vh 0;
+    position: sticky;
+    top: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass > *:last-child {
+    margin-top: auto !important;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-split {
+    box-sizing: border-box;
+    border-top: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    margin: 1.35vh 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    align-items: end;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-icon {
+    grid-area: 1/1/2/2;
+    width: 2.3vh;
+    margin-left: 1.8vh;
+    margin-bottom: 0.99vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    opacity: 1;
+    transition: opacity 0.2s;
+    transition-delay: 0.01s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-content {
+    grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.26vh;
+    opacity: 0;
+    transition: opacity 0.2s;
+    transition-delay: 0.01s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .T-EXTRA-text {
+    margin-left: 1.8vh;
+    margin-top: 1.35vh;
+    color: oklch(64.07% 0.0029 286.32deg);
+    white-space: nowrap;
+    text-box: trim-both cap alphabetic;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: oklch(100% 0 0deg / 0);
+    height: 2.2vh;
+    padding: 0.9vh;
+    margin: 0 0.9vh;
+    border-radius: 1.2vh;
+    position: relative;
+    text-decoration: none;
+    transition: background-color 0.2s, padding 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link .I-LINK-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.3vh;
+    fill: oklch(100% 0 0deg);
+    transition: fill 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link .T-LINK-heading {
+    display: none;
+    margin-left: 1.17vh;
+    opacity: 0;
+    color: oklch(100% 0 0deg);
+    white-space: nowrap;
+    text-box: trim-both cap alphabetic;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming {
+    display: flex;
+    background-color: oklch(100% 0 0deg);
+    padding: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming:hover {
+    background-color: oklch(86% 0 89.876deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming .I-LINK-icon {
+    fill: oklch(14.08% 0.0044 285.82deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming .T-LINK-heading {
+    color: oklch(14.08% 0.0044 285.82deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page {
+    grid-area: 1/1/2/2;
+    background-color: oklch(14.08% 0.0044 285.82deg);
+    z-index: 100;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: 120vh;
+    margin-left: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header {
+    grid-area: 1/1/2/2;
+    height: 6vh;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper {
+    height: 6vh;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border-right: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-bottom: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-left: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 0 0 2.1vh 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr 26.9vh 5.1vh;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 4.2vh;
+    padding: 0.86vh 0.9vh 0.9vh 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
+    grid-area: 1/1/2/2;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.2vh;
+    padding: 0 2.43vh 0 2.16vh;
+    border-radius: 1.2vh;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link .I-LOGO-svg {
+    height: 3.066vh;
+    fill: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-search {
+    grid-area: 1/2/2/3;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login {
+    grid-area: 1/3/2/4;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.2vh;
+    gap: 0.72vh;
+    box-sizing: border-box;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover .I-LOGIN-icon {
+    fill: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover .T-LOGIN-heading {
+    color: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link .I-LOGIN-icon {
+    height: 2.6vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    transition: fill 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link .T-LOGIN-heading {
+    color: oklch(64.07% 0.0029 286.32deg);
+    text-box: trim-both cap alphabetic;
+    transition: color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile {
+    grid-area: 1/3/2/4;
+    border-radius: 1.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile {
+    display: flex;
+    text-decoration: none;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1.2fr 1fr;
+    grid-column-gap: 0.99vh;
+    grid-row-gap: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-avatar {
+    grid-area: 1/1/3/2;
+    width: 4.2vh;
+    height: 4.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-avatar .I-AVATAR-image {
+    width: 4.2vh;
+    height: 4.2vh;
+    border-radius: 1.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-nickname {
+    grid-area: 1/2/2/3;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-nickname .T-NICKNAME-text {
+    margin-top: 0.36vh;
+    color: oklch(100% 0 0deg);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-title {
+    grid-area: 2/2/3/3;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-title .T-TITLE-text {
+    color: oklch(64.07% 0.0029 286.32deg);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings {
+    grid-area: 1/4/2/5;
+    margin-left: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2vh;
+    height: 4.2vh;
+    border: none;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button:hover .I-SETTINGS-icon {
+    fill: oklch(100% 0 0deg);
+    rotate: 0deg;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button .I-SETTINGS-icon {
+    width: 2.6vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    transition: fill 0.2s, rotate 0.45s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-main {
+    grid-area: 1/1/2/2;
+    margin-top: 6vh;
+    color: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass h2 {
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass p {
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass p:not(:last-child) {
+    margin-bottom: 3vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-text {
+    margin-bottom: 3vh;
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-login {
+    margin-bottom: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-password {
+    margin-bottom: 3vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form input {
+    width: 45vh;
+    border: none;
+    outline-width: 0;
+    border-radius: 1.2vh;
+    padding: 0.9vh;
+    transition: outline-width 0.06s;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form button {
+    border: none;
+    border-radius: 1.2vh;
+    padding: 0.9vh 3.6vh;
+    cursor: pointer;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-account .S-ACCOUNT-panel {
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass h2 {
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass p {
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass p:not(:last-child) {
+    margin-bottom: 3vh;
+  }
+}
+@media screen and (max-aspect-ratio: 1.4492753623) and (min-aspect-ratio: 1) {
+  .S-DESKTOP-wrapper {
+    display: unset;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: none;
+  }
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+  .S-DESKTOP-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation {
+    grid-area: 1/1/2/2;
+    width: 6vh;
+    z-index: 101;
+    overflow-x: clip;
+    transition: width 0.1s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover {
+    width: 30.8vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-icon {
+    opacity: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation:hover .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-content {
+    opacity: 1;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper {
+    height: 100vh;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    padding: 1.35vh 0;
+    box-sizing: border-box;
+    border-right: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 0 2.1vh 2.1vh 0;
+    position: sticky;
+    top: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass > *:last-child {
+    margin-top: auto !important;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-split {
+    box-sizing: border-box;
+    border-top: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    margin: 1.35vh 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    align-items: end;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-icon {
+    grid-area: 1/1/2/2;
+    width: 2.3vh;
+    margin-left: 1.8vh;
+    margin-bottom: 0.99vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    opacity: 1;
+    transition: opacity 0.2s;
+    transition-delay: 0.01s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .S-EXTRA-carcass .S-EXTRA-content {
+    grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.26vh;
+    opacity: 0;
+    transition: opacity 0.2s;
+    transition-delay: 0.01s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .S-NAVIGATION-extra .T-EXTRA-text {
+    margin-left: 1.8vh;
+    margin-top: 1.35vh;
+    color: oklch(64.07% 0.0029 286.32deg);
+    white-space: nowrap;
+    text-box: trim-both cap alphabetic;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: oklch(100% 0 0deg / 0);
+    height: 2.2vh;
+    padding: 0.9vh;
+    margin: 0 0.9vh;
+    border-radius: 1.2vh;
+    position: relative;
+    text-decoration: none;
+    transition: background-color 0.2s, padding 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link .I-LINK-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.3vh;
+    fill: oklch(100% 0 0deg);
+    transition: fill 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link .T-LINK-heading {
+    display: none;
+    margin-left: 1.17vh;
+    opacity: 0;
+    color: oklch(100% 0 0deg);
+    white-space: nowrap;
+    text-box: trim-both cap alphabetic;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming {
+    display: flex;
+    background-color: oklch(100% 0 0deg);
+    padding: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming:hover {
+    background-color: oklch(86% 0 89.876deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming .I-LINK-icon {
+    fill: oklch(14.08% 0.0044 285.82deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-navigation .S-NAVIGATION-wrapper .S-NAVIGATION-carcass .L-NAVIGATION-link_screaming .T-LINK-heading {
+    color: oklch(14.08% 0.0044 285.82deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page {
+    grid-area: 1/1/2/2;
+    background-color: oklch(14.08% 0.0044 285.82deg);
+    z-index: 100;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: 120vh;
+    margin-left: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header {
+    grid-area: 1/1/2/2;
+    height: 6vh;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper {
+    height: 6vh;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border-right: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-bottom: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-left: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 0 0 2.1vh 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr 26.9vh 5.1vh;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 4.2vh;
+    padding: 0.86vh 0.9vh 0.9vh 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
+    grid-area: 1/1/2/2;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.2vh;
+    padding: 0 2.43vh 0 2.16vh;
+    border-radius: 1.2vh;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .L-LOGO-link .I-LOGO-svg {
+    height: 3.066vh;
+    fill: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-search {
+    grid-area: 1/2/2/3;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login {
+    grid-area: 1/3/2/4;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.2vh;
+    gap: 0.72vh;
+    box-sizing: border-box;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover .I-LOGIN-icon {
+    fill: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link:hover .T-LOGIN-heading {
+    color: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link .I-LOGIN-icon {
+    height: 2.6vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    transition: fill 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-login .L-LOGIN-link .T-LOGIN-heading {
+    color: oklch(64.07% 0.0029 286.32deg);
+    text-box: trim-both cap alphabetic;
+    transition: color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile {
+    grid-area: 1/3/2/4;
+    border-radius: 1.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile {
+    display: flex;
+    text-decoration: none;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1.2fr 1fr;
+    grid-column-gap: 0.99vh;
+    grid-row-gap: 0;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-avatar {
+    grid-area: 1/1/3/2;
+    width: 4.2vh;
+    height: 4.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-avatar .I-AVATAR-image {
+    width: 4.2vh;
+    height: 4.2vh;
+    border-radius: 1.2vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-nickname {
+    grid-area: 1/2/2/3;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-nickname .T-NICKNAME-text {
+    margin-top: 0.36vh;
+    color: oklch(100% 0 0deg);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-title {
+    grid-area: 2/2/3/3;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-profile .L-PROFILE-profile .S-PROFILE-carcass .S-PROFILE-title .T-TITLE-text {
+    color: oklch(64.07% 0.0029 286.32deg);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings {
+    grid-area: 1/4/2/5;
+    margin-left: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2vh;
+    height: 4.2vh;
+    border: none;
+    border-radius: 1.2vh;
+    background-color: oklch(100% 0 0deg / 0);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button:hover {
+    background-color: oklch(19.31% 0.008 285.63deg);
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button:hover .I-SETTINGS-icon {
+    fill: oklch(100% 0 0deg);
+    rotate: 0deg;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-header .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-settings .B-SETTINGS-button .I-SETTINGS-icon {
+    width: 2.6vh;
+    fill: oklch(64.07% 0.0029 286.32deg);
+    transition: fill 0.2s, rotate 0.45s;
+  }
+  .S-DESKTOP-wrapper .S-DESKTOP-carcass .S-DESKTOP-page .S-PAGE-wrapper .S-PAGE-carcass .S-PAGE-main {
+    grid-area: 1/1/2/2;
+    margin-top: 6vh;
+    color: oklch(100% 0 0deg);
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass h2 {
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass p {
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-home .S-HOME-panel .S-PANEL-carcass p:not(:last-child) {
+    margin-bottom: 3vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-text {
+    margin-bottom: 3vh;
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-login {
+    margin-bottom: 0.9vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form .S-PANEL-password {
+    margin-bottom: 3vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form input {
+    width: 45vh;
+    border: none;
+    outline-width: 0;
+    border-radius: 1.2vh;
+    padding: 0.9vh;
+    transition: outline-width 0.06s;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-login .S-LOGIN-panel .S-PANEL-carcass .S-PANEL-form button {
+    border: none;
+    border-radius: 1.2vh;
+    padding: 0.9vh 3.6vh;
+    cursor: pointer;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-account .S-ACCOUNT-panel {
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 3vh 0;
+    background-color: oklch(15.58% 0.0063 285.64deg);
+    box-sizing: border-box;
+    border: 0.2vh solid oklch(26.15% 0.0055 286.01deg);
+    border-radius: 2.1vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass h2 {
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass p {
+    text-align: center;
+  }
+  .S-DESKTOP-wrapper .S-PAGE-wrapper .S-PAGE-main .COMPONENT-WORK_IN_PROGRESS-default .S-DEFAULT-carcass p:not(:last-child) {
+    margin-bottom: 3vh;
+  }
+}
+@media screen and (min-aspect-ratio: 1.4492753623) and (hover: none) and (pointer: coarse) {
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: unset;
+  }
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-aspect-ratio: 1.4492753623) and (hover: none) and (pointer: coarse) {
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: unset;
+  }
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-aspect-ratio: 1) and (min-aspect-ratio: 0.7142857143) {
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: none;
+  }
+  .S-MOBILE-wrapper {
+    display: unset;
+  }
+}
+@media screen and (max-aspect-ratio: 0.7142857143) {
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+  .S-LANDSCAPE-wrapper {
+    display: none;
+  }
+  .S-MOBILE-wrapper {
+    display: unset;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

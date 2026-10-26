@@ -1,0 +1,28 @@
+@use './mobile_responsive' as mobile;
+@use '../.core/variables' as *;
+@use 'sass:map';
+
+@mixin MOBILE_MODES($MODE) {
+    $MODE_VALUES: map.get(mobile.$MOBILE_MODES, $MODE);
+
+
+
+    // CHUNK:SETTINGS
+    .S-DESKTOP-wrapper {
+        // DISPLAY
+        display: none;
+    }
+    .S-LANDSCAPE-wrapper {
+        // DISPLAY
+        display: none;
+    }
+    .S-MOBILE-wrapper {
+        // DISPLAY
+        display: unset;
+    }
+
+
+
+    // CHUNK:
+    // LOCAL VARIABLES NAME =
+}
