@@ -2,7 +2,7 @@
     $icon = Blade::render("<x-icons.navigation.$iconName class=\"I-LINK-icon\" style=\"transform: scale($iconScale)\" />");
 
     $isWriteArticle = $href === route('write_an_article');
-    $isExternal = Str::startsWith($href, 'https://');
+    $isExternal = Str::startsWith($href, ['http://', 'https://']) && parse_url($href, PHP_URL_HOST) !== request()->getHost();
 @endphp
 
 <a

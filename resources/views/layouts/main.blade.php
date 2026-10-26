@@ -160,7 +160,7 @@
                                         />
                                     </div>
                                     <div class="S-EXTRA-content">
-                                        <p class="T-EXTRA-text TYPO-D-PRESET-CORE_SMALL">Версия: Alpha 1.0.0</p>
+                                        <p class="T-EXTRA-text TYPO-D-PRESET-CORE_SMALL">Версия: Alpha 1.0.1</p>
                                         <p class="T-EXTRA-text TYPO-D-PRESET-CORE_SMALL">Rasslabuha Original Development</p>
                                         <p class="T-EXTRA-text TYPO-D-PRESET-CORE_SMALL">© 2019-{{ date('Y') }}</p>
                                     </div>
